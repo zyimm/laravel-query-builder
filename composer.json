@@ -1,0 +1,37 @@
+{
+  "name": "zyimm/laravelquery-builder",
+  "description": "laravel 框架查询条件构造器服务包|Query condition builder service package of laravel framework",
+  "type": "library",
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.0",
+    "fideloper/proxy": "^4.0",
+    "laravel/framework": ">=5.5"
+  },
+  "require-dev": {
+    "barryvdh/laravel-debugbar": "^3.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "zyimm\\query\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "zyimm\\query\\": "tests"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "zyimm\\query\\QueryBuilderServiceProvider"
+      ]
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://mirrors.aliyun.com/composer/"
+    }
+  ]
+}
