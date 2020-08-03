@@ -7,6 +7,16 @@
 composer require zyimm/laravelquery-builder
 ```
 
+## Require
+```javascript
+    {
+      "require": {
+          "php": ">=7.0",
+          "fideloper/proxy": "^4.0",
+          "laravel/framework": ">=5.5"
+        }  
+    }   
+```
 ## Usage
 ```php
 // 目前支持条件操作符
