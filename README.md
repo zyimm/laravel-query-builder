@@ -19,20 +19,21 @@ composer require zyimm/laravelquery-builder
 ```
 ## Usage
 ```php
+/**
 // 目前支持条件操作符
-'=',
-'<>',
-'>',
-'>=',
-'<',
-'<=',
-'like',
-'full_like',
-'in',
-'not_in',
-'between',
-'not_between'
-<?php
+    '=',
+    '<>',
+    '>',
+    '>=',
+    '<',
+    '<=',
+    'like',
+    'full_like',
+    'in',
+    'not_in',
+    'between',
+    'not_between'
+**/
 use Illuminate\Support\Facades\DB;
 use zyimm\query\build\QueryWhere;
 /**
@@ -73,7 +74,6 @@ DB::enableQueryLog();
         $build->buildQueryWhere($data ,$condition, $query);
     })->get();
 dd(DB::getQueryLog());
-?>
 ```
 生成SQL查询记录如下截图:
 ![生成SQL查询记录](http://115.159.5.87/images/laravel-query-builder.jpg)
