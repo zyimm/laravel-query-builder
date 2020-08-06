@@ -5,6 +5,7 @@
 ## Install
 ```
 composer require zyimm/laravelquery-builder
+
 ```
 
 ## Require
@@ -20,7 +21,7 @@ composer require zyimm/laravelquery-builder
 ## Usage
 ```php
 /**
-// 目前支持条件操作符
+1.目前支持条件操作符
     '=',
     '<>',
     '>',
