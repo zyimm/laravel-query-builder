@@ -132,7 +132,8 @@ class QueryBuilder
      */
     public function inBetween()
     {
-        $val                                                    = $this->returnArray($this->params[$this->field]);
+        $val = $this->returnArray($this->params[$this->field]);
+        // set $this->where
         $this->where[$this->alias.$this->field.$this->operator] = [
             $this->alias.$this->field,
             Str::camel('where_'.$this->operator),
