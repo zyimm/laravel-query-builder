@@ -14,7 +14,7 @@ class QueryWhere
 {
 
     /**
-     * 查询构造器
+     * buildQueryWhere
      *
      * @param $params
      * @param $condition
