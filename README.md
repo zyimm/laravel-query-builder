@@ -78,7 +78,7 @@ dd(DB::getQueryLog());
 ```
 生成SQL查询记录如下截图:
 ![生成SQL查询记录](http://api.img.zyimm.com/media/20201012/bae11974ff1496f95b2eb9a8dabb7d22.jpg)
---提示--:  
+**提示**:  
 'in','not_in','between','not_between'标识符支持数组和字符串,字符串可选 ','和'.'作为分隔符。
 
 ## issue
