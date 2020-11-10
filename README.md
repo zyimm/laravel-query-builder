@@ -1,6 +1,6 @@
 ## laravel-query-builder
 
-> laravel-query-builder 是laravel框架根据已有配置来执行查询条件构造器服务包|Query condition builder service package of laravel framework
+> laravel-query-builder 是laravel框架根据已有配置来执行查询条件构造器服务包|laravel-query-builder is a service pack of the laravel framework for executing conditional query builders based on existing configurations.
 
 ## Install
 ```
