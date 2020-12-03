@@ -26,6 +26,7 @@ class QueryBuilderServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        //bind QueryWhere
         $this->app->bind('QueryWhere', QueryWhere::class);
     }
 
