@@ -1,14 +1,14 @@
 ## laravel-query-builder
 
-> laravel-query-builder 是laravel框架根据已有配置来执行查询条件构造器服务包|laravel-query-builder is a service pack of the laravel framework for executing conditional query builders based on existing configurations.
+> laravel-query-builder 是laravel框架根据已有配置来执行查询条件构造器服务包,再也不把查询写成意大利面条的代码了|laravel-query-builder is a service pack of the laravel framework for executing conditional query builders based on existing configurations.
 
-## Install
+## Install&安装
 ```
 composer require zyimm/laravelquery-builder
 
 ```
 
-## Require
+## Require&依赖
 ```javascript
     {
       "require": {
@@ -18,7 +18,7 @@ composer require zyimm/laravelquery-builder
         }  
     }   
 ```
-## Usage
+## Usage && 示例
 ```php
 /**
 1.目前支持条件操作符
