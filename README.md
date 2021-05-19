@@ -18,7 +18,7 @@ composer require zyimm/laravelquery-builder
         }  
     }   
 ```
-## Usage && 示例
+## Usage && 用例
 ```php
 /**
 1.目前支持条件操作符
