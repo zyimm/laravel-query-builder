@@ -41,12 +41,14 @@ use zyimm\query\build\QueryWhere;
  * @var QueryWhere $build
  */
 $build = app('QueryWhere');
+
 //提交过来数据
 $data = [
     'log_id' => 20,
     'user_id'=> 'zyimm',
     'user_name' => "zyimm,12"
 ];
+
 //配置数据库字段查询操作
 $condition =[
     '=' => [
