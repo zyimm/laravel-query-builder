@@ -1,14 +1,14 @@
 ## laravel-query-builder
 
-> laravel-query-builder 是laravel框架根据已有配置来执行查询条件构造器服务包|laravel-query-builder is a service pack of the laravel framework for executing conditional query builders based on existing configurations.
+> laravel-query-builder 是laravel框架根据已有配置来执行查询条件构造器服务包,再也不把查询写成意大利面条的代码了|laravel-query-builder is a service pack of the laravel framework for executing conditional query builders based on existing configurations.
 
-## Install
+## Install&安装
 ```
 composer require zyimm/laravelquery-builder
 
 ```
 
-## Require
+## Require&依赖
 ```javascript
     {
       "require": {
@@ -18,7 +18,7 @@ composer require zyimm/laravelquery-builder
         }  
     }   
 ```
-## Usage
+## Usage && 用例
 ```php
 /**
 1.目前支持条件操作符
@@ -41,12 +41,14 @@ use zyimm\query\build\QueryWhere;
  * @var QueryWhere $build
  */
 $build = app('QueryWhere');
+
 //提交过来数据
 $data = [
     'log_id' => 20,
     'user_id'=> 'zyimm',
     'user_name' => "zyimm,12"
 ];
+
 //配置数据库字段查询操作
 $condition =[
     '=' => [
@@ -78,6 +80,7 @@ dd(DB::getQueryLog());
 ```
 生成SQL查询记录如下截图:
 ![生成SQL查询记录](http://api.img.zyimm.com/media/20201012/bae11974ff1496f95b2eb9a8dabb7d22.jpg)
+
 **提示**:  
 'in','not_in','between','not_between'标识符支持数组和字符串,字符串可选 ','和'.'作为分隔符。
 
