@@ -43,20 +43,20 @@ class QueryBuilder
     {
         return [
             'general'   => [
-                '=',
-                '<>',
-                '>',
-                '>=',
-                '<',
-                '<=',
-                'like',
-                'full_like'
+                QueryOperator::LIKE,
+                QueryOperator::FULL_LIKE,
+                QueryOperator::EQ,
+                QueryOperator::NEQ,
+                QueryOperator::LQ,
+                QueryOperator::RQ,
+                QueryOperator::ELQ,
+                QueryOperator::ERQ,
             ],
             'inBetween' => [
-                'in',
-                'not_in',
-                'between',
-                'not_between'
+                QueryOperator::IN,
+                QueryOperator::NOT_IN,
+                QueryOperator::BETWEEN,
+                QueryOperator::NOT_BETWEEN
             ]
         ];
     }
