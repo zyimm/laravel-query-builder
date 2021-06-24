@@ -33,7 +33,7 @@ class QueryWhere
      * @param $where
      * @param $query Builder
      */
-    private function executeQuery($where, &$query)
+    private function executeQuery($where, Builder &$query)
     {
         foreach ($where as  $extra) {
             if (stripos($extra[1],'.') !== false) {

@@ -37,9 +37,9 @@ class QueryBuilder
     /**
      * can handleMap
      *
-     * @return \string[][]
+     * @return string[][]
      */
-    public function handleMap()
+    public function handleMap(): array
     {
         return [
             'general'   => [
@@ -67,7 +67,7 @@ class QueryBuilder
      *
      * @return bool
      */
-    public function handle()
+    public function handle(): bool
     {
         $map = $this->handleMap();
         foreach ($map as $key => $handle) {
@@ -84,7 +84,7 @@ class QueryBuilder
      *
      * @return array
      */
-    public function build()
+    public function build(): array
     {
         // foreach operator
         foreach ($this->condition as $operator => $fields) {
@@ -99,8 +99,7 @@ class QueryBuilder
                 }
                 $this->operator = strtolower($operator);
                 // defineAliasField
-                $this->defineAliasField($field);
-                $this->handle();
+                $this->defineAliasField($field)->handle();
             }
         }
         return $this->where;
@@ -112,7 +111,7 @@ class QueryBuilder
      * @param  string  $field
      * @return $this
      */
-    private function defineAliasField($field = '')
+    private function defineAliasField(string $field = ''): QueryBuilder
     {
         if (stripos($field, '.')) {
             list ($this->alias, $this->field) = explode('.', $field);
@@ -130,7 +129,7 @@ class QueryBuilder
      *
      * @return $this
      */
-    public function inBetween()
+    public function inBetween(): QueryBuilder
     {
         $val = $this->returnArray($this->params[$this->field]);
         // set $this->where
@@ -147,11 +146,11 @@ class QueryBuilder
      *
      * @return $this
      */
-    public function general()
+    public function general(): QueryBuilder
     {
         $val = $this->handleField();
         if (in_array($this->operator, QueryOperator::$like)) {
-            $this->operator = QueryOperator::like;
+            $this->operator = QueryOperator::LIKE;
         }
         $this->where[$this->alias.$this->field.$this->operator] = [
             $this->alias.$this->field,
@@ -188,7 +187,7 @@ class QueryBuilder
      * @param $param
      * @return array
      */
-    private function returnArray($param)
+    private function returnArray($param): array
     {
         if (!is_array($param)) {
             foreach ([',', '.'] as $type) {

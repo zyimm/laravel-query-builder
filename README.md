@@ -9,7 +9,7 @@ composer require zyimm/laravelquery-builder
 ```
 
 ## Require&依赖
-```javascript
+```json
     {
       "require": {
           "php": ">=7.0",
