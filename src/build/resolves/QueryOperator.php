@@ -6,49 +6,54 @@ namespace zyimm\query\build\resolves;
 
 class QueryOperator
 {
-    const like = 'like';
+    const LIKE = 'like';
 
-    const full_like = 'full_like';
+    const FULL_LIKE = 'full_like';
 
-    const in = 'in';
+    const IN = 'in';
 
-    const not_in = 'not_in';
+    const NOT_IN = 'not_in';
 
-    const eq = '=';
+    const EQ = '=';
 
-    const neq = '<>';
+    const NEQ = '<>';
 
-    const lq = '<';
+    const LQ = '<';
 
-    const rq = '>';
+    const RQ = '>';
 
-    const elq = '<=';
+    const ELQ = '<=';
 
-    const erq = '>=';
+    const ERQ = '>=';
 
-    const between = 'between';
+    const BETWEEN = 'between';
 
-    const not_between = 'not_between';
+    const NOT_BETWEEN= 'not_between';
 
 
-    // 运算符匹配数组
+    /**
+     * @var string[] 支持的运算符
+     */
     public static $operator = [
-        self::like,
-        self::full_like,
-        self::in,
-        self::not_in,
-        self::eq,
-        self::neq,
-        self::lq,
-        self::rq,
-        self::elq,
-        self::erq,
-        self::between,
-        self::not_between
+        self::LIKE,
+        self::FULL_LIKE,
+        self::IN,
+        self::NOT_IN,
+        self::EQ,
+        self::NEQ,
+        self::LQ,
+        self::RQ,
+        self::ELQ,
+        self::ERQ,
+        self::BETWEEN,
+        self::NOT_BETWEEN
     ];
 
+    /**
+     * @var string[] 支持匹配
+     */
     public static $like = [
-        self::like,
-        self::full_like
+        self::LIKE,
+        self::FULL_LIKE,
     ];
 }
