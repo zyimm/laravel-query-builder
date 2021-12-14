@@ -5,7 +5,6 @@
 ## Install&安装
 ```
 composer require zyimm/laravelquery-builder
-
 ```
 
 ## Require&依赖
