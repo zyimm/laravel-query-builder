@@ -20,7 +20,7 @@ composer require zyimm/laravelquery-builder
 ## Usage && 用例
 ```php
 /**
-1.目前支持条件操作符
+*目前支持条件操作符
     '=',
     '<>',
     '>',
