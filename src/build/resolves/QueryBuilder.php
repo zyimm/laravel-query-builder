@@ -3,6 +3,7 @@
 namespace zyimm\query\build\resolves;
 
 
+use Closure;
 use Illuminate\Support\Str;
 
 /**
@@ -19,6 +20,8 @@ class QueryBuilder
     public $where = [];
 
     public $aliasCount = [];
+
+    private  $call = [];
 
     private $alias, $field, $operator;
 
@@ -93,13 +96,22 @@ class QueryBuilder
                 continue;
             }
             // iteration fields
-            foreach ($fields as $field) {
-                if (!isset($this->params[$field])) {
-                    continue;
-                }
+            foreach ($fields as $key => $field) {
                 $this->operator = strtolower($operator);
-                // defineAliasField
-                $this->defineAliasField($field)->handle();
+                if (is_string($field)) {
+                    if (!isset($this->params[$field]) || is_null($this->params[$field])) {
+                        continue;
+                    }
+                    // defineAliasField
+                    $this->defineAliasField($field);
+                }
+                if ($field instanceof Closure) {
+                    $this->call = [
+                        'call'  => $field,
+                        'field' => $key
+                    ];
+                }
+                $this->handle();
             }
         }
         return $this->where;
@@ -109,19 +121,18 @@ class QueryBuilder
      * defineAliasField
      *
      * @param  string  $field
-     * @return $this
+     * @return void
      */
-    private function defineAliasField(string $field = ''): QueryBuilder
+    private function defineAliasField(string $field = ''): void
     {
         if (stripos($field, '.')) {
             list ($this->alias, $this->field) = explode('.', $field);
-            $this->alias .= '.';
-            array_push($this->aliasCount, $this->alias);
+            $this->alias        .= '.';
+            $this->aliasCount[] = $this->alias;
         } else {
             $this->alias = '';
         }
         $this->field = $field;
-        return $this;
     }
 
     /**
@@ -138,6 +149,24 @@ class QueryBuilder
             Str::camel('where_'.$this->operator),
             $val
         ];
+        return $this;
+    }
+
+    /**
+     * execClosure
+     *
+     * @return $this
+     */
+    public function execClosure(): QueryBuilder
+    {
+        $field = $this->call['field'];
+        if ($this->call['call'] instanceof Closure) {
+            $this->where[$field.$this->operator] = [
+                $field,
+                'where',
+                $this->call['call']
+            ];
+        }
         return $this;
     }
 
