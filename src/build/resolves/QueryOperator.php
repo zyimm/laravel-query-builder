@@ -8,6 +8,7 @@ class QueryOperator
 {
     const LIKE = 'like';
 
+    //全匹配
     const FULL_LIKE = 'full_like';
 
     const IN = 'in';
