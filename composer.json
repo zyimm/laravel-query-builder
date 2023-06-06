@@ -20,7 +20,8 @@
     "laravel/framework": ">=5.5"
   },
   "require-dev": {
-    "barryvdh/laravel-debugbar": "^3.0.0"
+    "barryvdh/laravel-debugbar": "^3.0.0",
+    "phpunit/phpunit": "8.5.x-dev"
   },
   "autoload": {
     "psr-4": {
@@ -38,11 +39,5 @@
         "zyimm\\query\\QueryBuilderServiceProvider"
       ]
     }
-  },
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://mirrors.aliyun.com/composer/"
-    }
-  ]
+  }
 }

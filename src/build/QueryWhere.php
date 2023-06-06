@@ -20,7 +20,7 @@ class QueryWhere
      * @param $condition
      * @param $query
      */
-    public function buildQueryWhere($params, $condition, &$query)
+    public function buildQueryWhere($params, $condition, $query)
     {
         $where = (new QueryBuilder($condition, $params))->build();
         //自动执行闭包查询
@@ -33,7 +33,7 @@ class QueryWhere
      * @param $where
      * @param $query Builder
      */
-    private function executeQuery($where, Builder &$query)
+    private function executeQuery($where, Builder $query)
     {
         foreach ($where as  $extra) {
             if (stripos($extra[1],'.') !== false) {
