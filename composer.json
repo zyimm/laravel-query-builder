@@ -8,7 +8,8 @@
   "authors": [
     {
       "name": "zyimm",
-      "email": "zyimm@qq.com"
+      "email": "zyimm@qq.com",
+      "homepage": "https://www.zyimm.com"
     }
   ],
   "description": "laravel 框架查询条件构造器服务包|Query condition builder service package of laravel framework",
